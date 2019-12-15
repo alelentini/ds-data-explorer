@@ -7,12 +7,12 @@
 _**Data Explorer**_ is a tool to *automate* the common tasks of the *data analysis stage* of a data science project: *data profiling* and *exploratory data analysis*:
 
 * Receives a delimiter-separated values file (DSV)
-* A phyton script processes the dataset computing the *data profiling* and *exploratory data analysis* tasks and storing the results as JavaScript objects.
+* A phyton script processes the dataset computing the *data profiling* and *exploratory data analysis* tasks and storing the results as JavaScript objects
 * Results can be interactively analyzed through a *single-page application*
 
 &nbsp;
 
-![Data Explorer diagram](/images/de_01.svg)
+<p align="center"><img src="/images/de_01.svg"></p>
 
 &nbsp;
 
