@@ -1,0 +1,121 @@
+/*-----------------------------------------------*/
+/* CSS Stylesheet                                */
+/*-----------------------------------------------*/
+
+
+.profile-body {
+    font-family: Calibri;
+    font-size:90%;
+}
+
+.padding-tb-10 {
+     padding-top: 10px;
+     padding-bottom: 10px;
+}
+
+.padding-t-10 {
+    padding-top: 10px;
+}
+
+.padding-t-35 {
+    padding-top: 35px;
+}
+
+.fa {
+    color:#404040;
+}
+
+.row-info p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.caption {
+    color:grey;
+    font-style: italic;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.col-name {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color:darkblue;
+    background: #EBF5FB;
+}
+
+.col-name-class {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color:darkred;
+    background: rgb(243, 211, 201);
+}
+
+.table-condensed {
+    font-size: 90%;
+}
+
+.table-condensed > thead > tr > th, 
+.table-condensed > tbody > tr > th, 
+.table-condensed > tfoot> tr >th, 
+.table-condensed > thead > tr > td, 
+.table-condensed > tbody > tr > td, 
+.table-condensed > tfoot > tr >td {
+    padding: 2px;
+}
+
+.table-col-sum {
+    width:90%;
+    margin:auto;
+}
+
+.table-col-sum th {
+    color: darkgrey;
+    border-top: none;
+}
+
+.table-col-sum td p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.table-col-values {
+    width:95%;
+    margin:auto;
+    font-size: 90%;
+}
+
+.table-col-values th {
+    color: darkgrey;
+    border-top: none;
+}
+
+.selected {
+    background-color: #F7F9FA;
+}
+
+.th1 th {
+    font-family: 'Courier New', Courier, monospace;
+    color:darkblue;
+    border-bottom: none !important;
+}
+
+.head-info {
+    font-size: 90%;
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.table-fixed tbody {
+    height:100px;
+    display:block;
+    overflow:auto;
+}
+
+.table-fixed thead, 
+.table-fixed tbody tr {
+    width:100%;
+    display:table;
+    table-layout:fixed;
+}

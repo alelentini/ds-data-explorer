@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<title>Data Explorer</title>
+		<!-- Browser Icon -->
+		<link rel='shortcut icon' type='image/png' href='images/icon.png'>
+		<!-- Bootstrap CSS -->
+		<link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+		<!-- Font Awesome -->
+		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+		<!-- Custom CSS -->
+		<link rel='stylesheet' type='text/css' href='css/eda.css'>
+	</head>
+
+	<body class='profile-body' onload='initEda()'>
+		<!-- Page content -->
+		<div class='container-fluid'>
+			<!-- Title & Info-->
+			<div class='sticky-top'>
+				<!-- Title -->
+				<div class='row bg-light'>
+					<h5 style='margin-left:15px;padding-top:10px'>
+						Data Explorer: <span id='ds-name' style='font-style:italic;font-weight:bold;color:darkblue'></span> dataset
+					</h5>
+				</div>
+				<!-- Info-->
+				<div class='row bg-light'>
+					<!-- Name, size and column summary -->
+					<div class='col-3'>
+						<!-- Name -->
+						<div class='row row-info'>
+							<div class='col-5'>
+								<p class='caption'>Name: </p>
+							</div>
+							<div class='col-5'>
+								<p id='ds-file-name'></p>
+							</div>
+						</div>
+						<!-- Disk size -->
+						<div class='row row-info'>
+							<div class='col-5'>
+								<p class='caption'>Disk size: </p>
+							</div>
+							<div class='col-5'>
+								<p id='ds-file-size-disk'></p>
+							</div>
+						</div>
+						<!-- Memory size -->
+						<div class='row row-info'>
+							<div class='col-5'>
+								<p class='caption'>Memory size: </p>
+							</div>
+							<div class='col-5'>
+								<p id='ds-file-size-memory'></p>
+							</div>
+						</div>
+					</div>
+					<!-- Dataset description -->
+					<div class='col-9'>
+						<p id='ds-description-1'></p>
+					</div>
+				</div>
+			</div>
+			<!-- Row & Column info + Columns profiling + Data table -->
+			<div class='row'>
+				<!-- Row & Column info -->
+				<div class='col-3'>
+					<!-- Row number -->
+					<div class='row row-info'>
+						<div class='col-5'>
+							<p class='caption'>Rows</p>
+						</div>
+						<div class='col-5'>
+							<p id='ds-row-num'></p>
+						</div>
+					</div>
+					<!-- Column number -->
+					<div class='row row-info'>
+						<div class='col-5'>
+							<p class='caption'>Columns: </p>
+						</div>
+						<div class='col-5'>
+							<p id='ds-col-num'></p>
+						</div>
+					</div>
+					<!-- Column summary table -->
+					<div class='row' style='margin-top:10px;'>
+						<table id='col-table' class='table table-condensed table-hover table-col-sum'>
+							<tbody id='col-table-body'></tbody>
+						</table>
+					</div>
+				</div>
+				<!-- Column profiling + Data table -->
+				<div class='col-9'>
+					<!-- Column profiling -->
+					<div class='row padding-tb-10'>
+						<p id='col-name'></p>
+						<div style='width:96%;margin:auto'>
+							<table class='table table-borderless'>
+								<tbody>
+									<!-- Profiling charts -->
+									<td id='prof-charts' style='width:60%'></td>
+									<!-- Summary statistics -->
+									<td style='width:40%'>
+										<div style='width:96%;margin:auto'>
+											<table id='col-num-stats' class='table table-condensed table-hover d-none'>
+												<tbody id='col-num-stats-body'>
+													<tr><td class='caption' style='width:25%'>Mean:</td><td></td><td class='caption' style='width:25%'>Mode:</td class='caption' style='width:25%'><td></td></tr>
+													<tr><td class='caption' style='width:25%'>SD:</td class='caption' style='width:25%'><td></td><td class='caption' style='width:25%'>MAD:</td class='caption' style='width:25%'><td></td></tr>
+													<tr><td class='caption' style='width:25%'>Min:</td class='caption' style='width:25%'><td></td><td class='caption' style='width:25%'>Q1:</td class='caption' style='width:25%'><td></td></tr>
+													<tr><td class='caption' style='width:25%'>Max:</td class='caption' style='width:25%'><td></td><td class='caption' style='width:25%'>Q2:</td class='caption' style='width:25%'><td></td></tr>
+													<tr><td class='caption' style='width:25%'>Range:</td class='caption' style='width:25%'><td></td><td class='caption' style='width:25%'>Q3:</td class='caption' style='width:25%'><td></td></tr>
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- Data table -->
+					<div class='row'>
+						<p id='ds-view-show-info' style='font-size:90%;color:darkgrey'></p>
+						<table id='ds-table' class='table table-condensed table-hover table-fixed'>
+							<thead id='ds-table-head'></thead>
+							<tbody id='ds-table-body'></tbody>
+						</table>
+						<div id='ds-view' style='width:96%;margin:auto'>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!------------------------------------>
+		<!-- JavaScript external references -->
+		<!------------------------------------>
+		<!-- jQuery -->
+		<script src='js/jquery-3.4.1.min.js'></script>
+		<!-- Bootstrap -->
+		<script src='js/bootstrap.min.js'></script>
+		<!-- Vega -->
+		<script src='https://cdn.jsdelivr.net/npm/vega@5'></script>
+		<script src='https://cdn.jsdelivr.net/npm/vega-lite@4'></script>
+		<script src='https://cdn.jsdelivr.net/npm/vega-embed@6'></script>
+		<!-- Custom JS libraries -->
+		<script src='js/iris-eda.js'></script>
+		<script src='js/eda.js'></script>
+	</body>
+</html>
