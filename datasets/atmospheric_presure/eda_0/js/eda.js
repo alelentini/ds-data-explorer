@@ -139,7 +139,7 @@ function populate_profiling(col_ix) {
         rows = document.getElementById('col-num-stats-body').rows;
         if(ds.col_types[col_ix] == 'numeric' && ds.col_subtypes_2[col_ix] != 'ID') {
             // Updates profiling table
-            document.querySelectorAll('.numeric').forEach(elem => {
+            document.querySelectorAll('.numeric, .text').forEach(elem => {
                 elem.classList.remove('d-none');
             });
             document.querySelectorAll('.date-time').forEach(elem => {
@@ -159,14 +159,22 @@ function populate_profiling(col_ix) {
             create_numeric_chart(col_ix);
         } else if(ds.col_types[col_ix] == 'text' && ds.col_subtypes_2[col_ix] != 'ID') {
             // Updates profiling table
-            
+            document.querySelectorAll('.text').forEach(elem => {
+                elem.classList.remove('d-none');
+            });
+            document.querySelectorAll('.numeric, .date-time').forEach(elem => {
+                elem.classList.add('d-none');
+            });
+            rows[7].cells[1].innerHTML = ds.col_values[col_ix].unique_values.length;
+            document.getElementById('col-num-stats').classList.remove('d-none');
             // Updates profiling charts
             create_text_chart(col_ix);
         } else if(ds.col_types[col_ix] == 'date time') {
+            // Updates profiling table
             document.querySelectorAll('.date-time').forEach(elem => {
                 elem.classList.remove('d-none');
             });
-            document.querySelectorAll('.numeric').forEach(elem => {
+            document.querySelectorAll('.numeric, .text').forEach(elem => {
                 elem.classList.add('d-none');
             });
             rows[5].cells[1].innerHTML = ds.col_values[col_ix].start;
