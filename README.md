@@ -31,5 +31,5 @@ It is recommended to use _**Data Explorer**_ as a template for common data profi
 
 Some examples:
 
-* [Iris] (https://github.com/alelentini/ds-data-explorer/datasets/iris/eda_1/index.html)
-* [Bs. As. atmospheric pressure] (https://github.com/alelentini/ds-data-explorer/datasets/atmospheric_presure/eda_0/index.html)
+* [Iris](https://github.com/alelentini/ds-data-explorer/datasets/iris/eda_1/index.html)
+* [Bs. As. atmospheric pressure](https://github.com/alelentini/ds-data-explorer/datasets/atmospheric_presure/eda_0/index.html)
