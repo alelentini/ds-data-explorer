@@ -69,6 +69,9 @@ class ColValues:
             self.q3 = 0
             self.sd = 0
             self.md = [0]
+        if col_type == 'datetime64[ns]':
+            self.start = 0
+            self.end = 0
 
 
 # --------------------------------------------------------------------------------------------------
@@ -168,11 +171,12 @@ def set_col_values():
             ds.col_sum_stats[-1].q1 = sum_stats['25%']
             ds.col_sum_stats[-1].q2 = sum_stats['50%']
             ds.col_sum_stats[-1].q3 = sum_stats['75%']
-        if df.dtypes[col] == 'object':
-            ds.col_sum_stats[-1].nulls += (df[col].values == '').sum()
-        elif df.dtypes[col] == 'bool':
-            pass
         elif df.dtypes[col] == 'object':
+            ds.col_sum_stats[-1].nulls += (df[col].values == '').sum()
+        elif df.dtypes[col] == '<M8[ns]':
+            ds.col_sum_stats[-1].start = df[col].min()
+            ds.col_sum_stats[-1].end = df[col].max()
+        elif df.dtypes[col] == 'bool':
             pass
         else:
             pass
@@ -219,6 +223,9 @@ def save_results():
             ofile.write('q1: ' + str(ds.col_sum_stats[col_ix].q1) + ', ')
             ofile.write('q2: ' + str(ds.col_sum_stats[col_ix].q2) + ', ')
             ofile.write('q3: ' + str(ds.col_sum_stats[col_ix].q3) + ', ')
+        elif df.dtypes[col] == 'datetime64[ns]':
+            ofile.write('start: \'' + str(ds.col_sum_stats[col_ix].start) + '\', ')
+            ofile.write('end: \'' + str(ds.col_sum_stats[col_ix].end) + '\', ')
         ofile.write('unique_values: ' + str(ds.col_sum_stats[col_ix].unique_values).replace('nan', 'null') + ', ')
         ofile.write('unique_count: ' + str(ds.col_sum_stats[col_ix].unique_count).replace('nan', 'null') + '},\n')
     ofile.write('\t]\n')
