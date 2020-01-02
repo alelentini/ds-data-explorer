@@ -384,14 +384,16 @@ function create_numeric_chart(col_ix) {
 function initEda() {
 
     // Download dataframe data
-    download_df();
-    
+    //download_df();
+
     // Populates dataset information summary
     populate_description();
 
     // Populates dataset view table
-    //populate_data_table(); 
+    populate_data_table(); 
 
     // Populates profiling
-    //populate_profiling(0);  
+    populate_profiling(0);  
+
+    document.getElementById('loading-msg').classList.add('d-none');
 }
