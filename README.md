@@ -28,5 +28,5 @@ _**Data Explorer**_ is a tool to *automate* the common tasks of the *data analys
 
 **Examples**
 
-* [Iris](https://github.com/alelentini/ds-data-explorer/datasets/iris/eda_1/index.html)
-* [Bs. As. atmospheric pressure](https://github.com/alelentini/ds-data-explorer/datasets/atmospheric_presure/eda_0/index.html)
+* [Iris](https://alelentini.github.io/ds-data-explorer/datasets/iris/eda_1/index.html)
+* [Bs. As. atmospheric pressure](https://alelentini.github.io/ds-data-explorer/datasets/atmospheric_presure/eda_0/index.html)
