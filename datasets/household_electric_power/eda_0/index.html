@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<title>Data Explorer</title>
+		<!-- Browser Icon -->
+		<link rel='shortcut icon' type='image/png' href='images/icon.png'>
+		<!-- Bootstrap CSS -->
+		<link rel='stylesheet' type='text/css' href='libraries/bootstrap-4.3.1/css/bootstrap.min.css'>
+		<!-- Font Awesome -->
+		<link rel='stylesheet' type='text/css' href='libraries/font-awesome-4.7.0/css/font-awesome.min.css'>
+		<!-- Tabulator -->
+		<link rel='stylesheet' type='text/css' href='libraries/tabulator-4.5/css/tabulator.min.css'>
+		<!-- Custom CSS -->
+		<link rel='stylesheet' type='text/css' href='css/eda.css'>
+	</head>
+
+	<body class='profile-body' onload='initEda()'>
+		<!-- Page content -->
+		<div class='container-fluid'>
+			<!-- Title-->
+			<div class='sticky-top'>
+				<div class='row bg-light '>
+					<div class='col-6'><h5 style='margin-left:15px;padding-top:10px'>Data Explorer</h5></div>
+					<div class='col-6'>
+						<p id='loading-col-msg' class='float-right d-none' style='margin-top:15px'>
+							<label for='data-col-progress'>
+								<i class='fa fa-spinner fa-spin'></i><span id='loading-col-msg-status'></span>
+							</label>
+							<progress id='data-col-progress' max='1' value='0'></progress>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- Dataset info -->
+			<p class='section-title'><i id='section-button-0' class='fa fa-chevron-up' style='font-size:70%;cursor:pointer;' onclick='toggle_section(0)' title='Show/hide section details'></i>&nbsp;&nbsp;Dataset info</p>
+			<hr>
+			<div id='section-0' class='row padding-tb-10'>
+				<div class='col-3'>
+					<table id='ds-table-1' class='table table-borderless table-condensed'>
+						<tbody>
+							<tr><td class='caption'>Name: </td><td><span id='ds-name' class='ds-name'></span></td></tr>
+							<tr><td class='caption'>Disk size: </td><td><span id='ds-disk-size'></span></td></tr>
+							<tr><td class='caption'>Rows: </td><td><span id='ds-rows'></span></td></tr>
+							<tr><td class='caption'>Columns: </td><td><span id='ds-columns'></span></td></tr>
+						</tbody>
+					</table>
+				</div>
+				<div class='col-9'>
+					<table id='ds-table-2' class='table table-borderless table-condensed'>
+						<tbody>
+							<tr class='d-none'><td class='caption'>Path: </td><td><span id='ds-path'></span></td></tr>
+							<tr><td class='caption'>Description: </td><td><span id='ds-description'></span></td></tr>
+							<tr><td class='caption'>References: </td><td><span id='ds-references'></span></td></tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- Column Profiling -->
+			<p class='section-title'><i id='section-button-1' class='fa fa-chevron-up' style='font-size:70%;cursor:pointer;' onclick='toggle_section(1)' title='Show/hide section details'></i>&nbsp;&nbsp;Column Profiling</p>
+			<hr>
+			<div id='section-1' class='row padding-tb-10'>
+				<table id='col-prof-table' class='table table-col-prof table-condensed'>
+					<thead id='col-prof-table-head'>
+						<th style='width:20%'>Name</th>
+						<th style='width:20%'>Data Types</th>
+						<th style='width:10%'>Analysis Type</th>
+						<th style='width:10%'>Nulls</th>
+						<th style='width:40%'>Description</th>
+					</thead>
+					<tbody id='col-prof-table-body'></tbody>
+				</table>
+			</div>
+			<!-- Table View -->
+			<p class='section-title'><i id='section-button-2' class='fa fa-chevron-up' style='font-size:70%;cursor:pointer;' onclick='toggle_section(2)' title='Show/hide section details'></i>&nbsp;&nbsp;Table View</p>
+			<hr>
+			<div id='section-2'>
+				<div class='row padding-tb-10'>
+					<div id='data-table-info'><span class="caption" style='margin-left:15px'><i class='fa fa-spinner fa-spin'></i> Building table</span></div>
+				</div>
+				<!-- Data table -->
+				<div class='row padding-tb-10'>
+					<div id='data-table' style='width:95%;margin:auto'></div>
+				</div>
+			</div>
+		</div>
+		<!------------------------------------>
+		<!-- JavaScript external references -->
+		<!------------------------------------>
+		<!-- jQuery -->
+		<script src='libraries/jquery-3.4.1/jquery-3.4.1.min.js'></script>
+		<!-- Bootstrap -->
+		<script src='libraries/bootstrap-4.3.1/js/bootstrap.min.js'></script>
+		<!-- PapaParse -->
+		<!-- <script src='libraries/papaparse-5.1.1/papaparse.min.js'></script> -->
+		<!-- D3 -->
+		<!-- <script src='libraries/d3-5.15.0/d3.min.js'></script> -->
+		<!-- Tabulator -->
+		<script src='libraries/tabulator-4.5/js/tabulator.min.js'></script>
+		<!-- Vega -->
+		<script src='https://cdn.jsdelivr.net/npm/vega@5'></script>
+		<script src='https://cdn.jsdelivr.net/npm/vega-lite@4'></script>
+		<script src='https://cdn.jsdelivr.net/npm/vega-embed@6'></script>
+		<!-- Custom JS libraries -->
+		<script src='data/eda-ds.js'></script>
+		<script src='js/eda.js'></script>
+	</body>
+</html>

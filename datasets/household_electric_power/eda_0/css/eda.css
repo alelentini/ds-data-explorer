@@ -1,0 +1,209 @@
+/*--------------------------------------------------------------------------------------------------------*/
+/* Generic Styles
+/*--------------------------------------------------------------------------------------------------------*/
+
+
+.profile-body {
+    font-family: Calibri;
+    font-size:90%;
+}
+
+.padding-tb-10 {
+     padding-top: 10px;
+     padding-bottom: 10px;
+}
+
+.padding-t-10 {
+    padding-top: 10px;
+}
+
+.padding-t-35 {
+    padding-top: 35px;
+}
+
+hr {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.fa {
+    color:#404040;
+}
+
+.row-info p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.section-title {
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+.caption {
+    color:grey;
+    font-style: italic;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.ds-name {
+    font-style: italic;
+    font-weight: bold;
+    color: darkblue;
+}
+
+.col-name {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color:darkblue;
+    background: #EBF5FB;
+}
+
+.col-name-class {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color:darkred;
+    background: rgb(243, 211, 201);
+}
+
+.data-type-numeric {
+    color: darkblue;
+}
+
+.data-type-date-time {
+    color: darkred;
+}
+
+.data-type-text {
+    color: darkslategrey;
+}
+
+#ds-table {
+    width: 95%;
+    margin: auto;
+}
+
+.table-condensed {
+    font-size: 90%;
+}
+
+.table-condensed > thead > tr > th, 
+.table-condensed > tbody > tr > th, 
+.table-condensed > tfoot> tr >th, 
+.table-condensed > thead > tr > td, 
+.table-condensed > tbody > tr > td, 
+.table-condensed > tfoot > tr >td {
+    padding: 2px;
+}
+
+.table-col-prof {
+    width: 95%;
+    margin: auto;
+}
+
+.table-col-prof > thead > tr > th {
+    border-top: none;
+}
+
+.table-col-types {
+    width: 90%;
+    margin-left: 0px;
+}
+
+.table-col-sum {
+    width:90%;
+    margin:auto;
+}
+
+.table-col-sum th {
+    color: darkgrey;
+    border-top: none;
+}
+
+.table-col-sum td p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.table-col-values {
+    width:95%;
+    margin:auto;
+    font-size: 90%;
+}
+
+.table-col-values th {
+    color: darkgrey;
+    border-top: none;
+}
+
+.selected {
+    background-color: #F7F9FA;
+}
+
+.th1 th {
+    font-family: 'Courier New', Courier, monospace;
+    color:darkblue;
+    border-bottom: none !important;
+}
+
+.head-info {
+    font-size: 90%;
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.table-fixed tbody {
+    height:100px;
+    display:block;
+    overflow:auto;
+}
+
+.table-fixed thead, 
+.table-fixed tbody tr {
+    width:100%;
+    display:table;
+    table-layout:fixed;
+}
+
+.table-col-prof-det tbody {
+    height:100px;
+    display:block;
+    overflow:auto;
+}
+
+.table-col-prof-det thead, 
+.table-col-prof-det tbody tr {
+    width:100%;
+    display:table;
+    table-layout:fixed;
+}
+
+.data-table-header-info {
+    font-weight: normal;
+    font-size: 90%;
+    margin-bottom:2px;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+/* Custom Styles for dataset
+/*--------------------------------------------------------------------------------------------------------*/
+
+#data-table .tabulator-tableHolder .tabulator-table .tabulator-row .tabulator-cell:nth-child(2),
+#data-table .tabulator-tableHolder .tabulator-table .tabulator-row .tabulator-cell:nth-child(3) {
+    color: darkred;
+}
+
+#data-table .tabulator-tableHolder .tabulator-table .tabulator-row .tabulator-cell:nth-child(4),
+#data-table .tabulator-tableHolder .tabulator-table .tabulator-row .tabulator-cell:nth-child(5),
+#data-table .tabulator-tableHolder .tabulator-table .tabulator-row .tabulator-cell:nth-child(6),
+#data-table .tabulator-tableHolder .tabulator-table .tabulator-row .tabulator-cell:nth-child(7),
+#data-table .tabulator-tableHolder .tabulator-table .tabulator-row .tabulator-cell:nth-child(8),
+#data-table .tabulator-tableHolder .tabulator-table .tabulator-row .tabulator-cell:nth-child(9) {
+    color: darkslategrey;
+}
+
+#data-table .tabulator-tableHolder .tabulator-table .tabulator-row .tabulator-cell:nth-child(10) {
+    color: darkblue;
+}
