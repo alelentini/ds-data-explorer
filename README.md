@@ -35,10 +35,12 @@ _**Data Explorer**_ is a tool to *automate* the common tasks of the *data analys
 
 ## How does it works?
 
-* Receives a delimiter-separated values file (DSV)
-* A phyton script processes the dataset computing the *data profiling* and *exploratory data analysis* tasks and stores the results as JavaScript objects
-* Results can be interactively analyzed through a *single-page application*
-* It is recommended to use _**Data Explorer**_ as a template for common data profiling and exploratory tasks, and then customize it according to the particular needs of each dataset.
+1. Receives a delimiter-separated values file (DSV)
+1. A phyton script processes the dataset computing the *data profiling* and *exploratory data analysis* tasks and stores the results as JavaScript objects
+1. Results can be interactively analyzed through a *single-page application*
+1. It is recommended to use _**Data Explorer**_ as a template for common data profiling and exploratory tasks, and then customize it according to the particular needs of each dataset.
+
+&nbsp;
 
 <p align="center"><img src="/images/de_01.svg"></p>
 
@@ -46,7 +48,8 @@ _**Data Explorer**_ is a tool to *automate* the common tasks of the *data analys
 
 ## Next features
 
-* Data integrity section:
-    -> Nulls, mixed types (e.g. a text value in a field that is numeric), timeseries intervals disruptions, etc.
-    -> Summary of records with data integrity issues
-* GB size datasets -> use webworkers to avoid browser blocking.
+* *Data integrity section*:
+    * Nulls, mixed types (e.g. a text value in a field that is numeric), timeseries intervals disruptions, etc.
+    * Summary of records with data integrity issues
+* *Table vie section*: add filters and charts
+* *GB size datasets*: use webworkers to avoid browser blocking.
