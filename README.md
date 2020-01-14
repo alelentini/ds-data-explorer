@@ -1,4 +1,7 @@
 # Data Explorer: a tool to automate data profiling and exploratory analysis
+<div class="text-blue mb-2">
+  .text-blue on white
+</div>
 
 :warning: **Alpha version**  |  :hammer_and_wrench: **Work in progress**
 
